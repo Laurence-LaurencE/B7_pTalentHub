@@ -1,0 +1,29 @@
+{
+  "name": "b7_ptalenthub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx index.ts",   
+    "dev": "tsx watch index.ts",  
+    "build:js": "rollup -c",
+    "build:css": "sass src/scss/style.scss public/css/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "rollup": "^4.48.1",
+    "sass": "^1.91.0",
+    "tslib": "^2.8.1",
+    "tsx": "^4.20.5"
+  }
+}
