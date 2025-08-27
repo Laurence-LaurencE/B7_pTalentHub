@@ -1,46 +1,49 @@
 import { Router } from "express";
+import { GlobalsController } from "../controllers/GlobalsController";
 
-
-const globalRouter = Router();
+const globalsRouter = Router();
 
 //homepage
-globalRouter.get("/", (request, response) => {
+globalsRouter.get("/", (request, response) => {
     const controller = new GlobalsController (request, response);
-    controller.homepage();
+    controller.homepage(); //methode homepage de mon global controller
 });
 
-//classified pages = Browse
-globalRouter.get("/", (request, response) => {
-    const controller = new GlobalsController (request, response);
-    controller.classifiedpages();
-});
+export default globalsRouter;
 
-//Ads page = Read
-globalRouter.get("/adspage/:id", (request, response) => {
-    const controller = new GlobalsController (request, response);
-    controller.adspage();
-});
 
-//modif ads = Form Edit => put or patch ?????
-globalRouter.patch("/editform/:id", (request, response) => {
-    const controller = new GlobalsController (request, response);
-    controller.editform();
-})
+// //list pages = Browse
+// globalsRouter.get("/listpage", (request, response) => {
+//     const controller = new GlobalsController (request, response);
+//     controller.listpage();
+// });
 
-//Create ad = Form Add => GET (affiche form)
-globalRouter.get("/addform", (request, response) => {
-    const controller = new GlobalsController (request, response);
-    controller.addform();
+// //Ads page = Read
+// globalsRouter.get("/adspage/:id", (request, response) => {
+//     const controller = new GlobalsController (request, response);
+//     controller.adspage();
+// });
 
-})
+// //modif ads = Form Edit => put or patch ?????
+// globalsRouter.patch("/editform/:id", (request, response) => {
+//     const controller = new GlobalsController (request, response);
+//     controller.editform();
+// })
 
-//Create ad = Form Add => POST (traite le form)
-globalRouter.post("/addform", (request, response) => {
-    const controller = new GlobalsController (request, response);
-    controller.addform();
+// //Create ad = Form Add => GET (affiche form)
+// globalsRouter.get("/addform", (request, response) => {
+//     const controller = new GlobalsController (request, response);
+//     controller.addform();
 
-})
+// })
 
-//Delete ad = Delete
+// //Create ad = Form Add => POST (traite le form)
+// globalsRouter.post("/addform", (request, response) => {
+//     const controller = new GlobalsController (request, response);
+//     controller.addform();
 
-export default globalRouter;
+// })
+
+// //Delete ad = Delete
+
+
