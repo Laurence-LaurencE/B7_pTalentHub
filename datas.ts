@@ -60,7 +60,7 @@ export const ads: Ads[]
     mission_type: "Freelance",
     start_date: "2025-09-15",
     salary: 4000,
-    salary_unit: "mois",
+    salary_unit: "Brut mensuel",
     password: "frontReact2025"
   },
   {
@@ -68,10 +68,10 @@ export const ads: Ads[]
     title: "Intégrateur Web HTML/CSS",
     description: "Votre mission sera de transformer les maquettes Figma en pages HTML/CSS responsives pour un site e-commerce.",
     skills: ["HTML5", "CSS3", "Responsive Design", "Figma"],
-    mission_type: "CDD - 2 mois",
+    mission_type: "CDD",
     start_date: "2025-10-01",
     salary: 2300,
-    salary_unit: "mois",
+    salary_unit: "Brut mensuel",
     password: "inteWeb@2025"
   },
   {
@@ -82,7 +82,7 @@ export const ads: Ads[]
     mission_type: "CDI",
     start_date: "2025-09-10",
     salary: 48000,
-    salary_unit: "an",
+    salary_unit: "Brut annuel",
     password: "stackNode#25"
   },
   {
@@ -93,7 +93,7 @@ export const ads: Ads[]
     mission_type: "CDI",
     start_date: "2025-09-20",
     salary: 3000,
-    salary_unit: "mois",
+    salary_unit: "Brut mensuel",
     password: "chefProjet2025"
   },
   {
@@ -101,7 +101,7 @@ export const ads: Ads[]
     title: "Développeur Mobile Flutter",
     description: "Développement d'une application mobile pour un service de réservation. Projet de 6 mois avec possibilité de CDI.",
     skills: ["Flutter", "Dart", "Firebase", "UI/UX"],
-    mission_type: "Freelance ou CDD",
+    mission_type: "Freelance",
     start_date: "2025-09-05",
     salary: 350,
     salary_unit: "jour",
@@ -112,7 +112,7 @@ export const ads: Ads[]
     title: "Développeur Full",
     description: "Développement d'une application mobile pour un service de réservation. Projet de 6 mois avec possibilité de CDI.",
     skills: ["Flutter", "Dart", "Firebase", "UI/UX"],
-    mission_type: "Freelance ou CDD",
+    mission_type: "Freelance",
     start_date: "2025-09-05",
     salary: 350,
     salary_unit: "jour",
@@ -129,7 +129,7 @@ export const ads: Ads[]
       "PostgreSQL",
       "Docker"
     ],
-    mission_type: "Freelance - 4 mois",
+    mission_type: "Freelance",
     start_date: "2025-09-25",
     salary: 420,
     salary_unit: "jour",
