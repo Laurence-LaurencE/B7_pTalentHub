@@ -1,11 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>Accueil Test</h2>
-</body>
-</html>
+<%- include("../partials/head", { title: "Accueil TalentHub" }) %>
+<%- include("../partials/header") %>
+   
+<main>
+    <!-- <h2>Accueil Test</h2> -->
+     <banner>
+        <h2>Trouvez la mission qui vous correspond.</h2>
+        <p>Découvrez des annonces claires, accessibles et adaptées à vos talents.</p>
+        <p>Publiez, éditez ou supprimez vos offres en toute simplicité.</p>
+        <a>Découvrez les offres</a>
+    </banner>
+
+
+    <!-- Afficher les 3 dernières annonces publiées de la page list-->
+            <!-- classer par ordre de date publication de la plus récente  à la plus ancienne-->
+        <div>   <!-- 1 container-->
+            <h2>Les dernières annonces</h2> <!-- 1 titre-->
+            
+            <div> <!-- annonce 1-->
+                <a>A1</a>
+            </div>
+            <div> <!-- annonce 2-->
+                <a>A2</a>
+            </div>
+            <div> <!-- annonce 3-->
+                <a>A3</a>
+            </div>
+            
+            <a>Consulter toutes les annonces</a>
+        </div>
+
+</main>
+
+
+<%- include("../partials/footer") %>
+
