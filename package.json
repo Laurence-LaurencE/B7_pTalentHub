@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsx index.ts",   
-    "dev": "tsx watch index.ts",  
+    "start": "tsx index.ts",
+    "dev": "tsx watch index.ts",
     "build:js": "rollup -c",
     "build:css": "sass src/scss/style.scss public/css/style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,6 +24,7 @@
     "rollup": "^4.48.1",
     "sass": "^1.91.0",
     "tslib": "^2.8.1",
-    "tsx": "^4.20.5"
+    "tsx": "^4.20.5",
+    "zod": "^4.1.5"
   }
 }

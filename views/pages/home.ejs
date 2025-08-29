@@ -20,15 +20,19 @@ include("../partials/header") %>
     <!-- 1 titre-->
 
     <div>
+      <% ads.forEach((ad) => { %>
       <div>
         <!-- annonce 1-->
-        <a>A1</a>
+        <a href="/ads/<%= ad.id %>">
+          <%= ad.title %>
+        </a>
       </div>
-      <div>
+      <% }) %>
+      <div style="display: none">
         <!-- annonce 2-->
         <a>A2</a>
       </div>
-      <div>
+      <div style="display: none">
         <!-- annonce 3-->
         <a>A3</a>
       </div>

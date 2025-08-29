@@ -31,7 +31,7 @@ include("../partials/header") %>
         class="post-add-form-textarea"
         placeholder="--"
       >
-"<%= value?.description || '' %>"
+<%= value?.description || '' %>
         </textarea
       >
 
@@ -73,7 +73,7 @@ include("../partials/header") %>
     <div>
         <!--select missionType-->
         <label for="missiontype" class="post-add-label"
-        >Compétence(s) recherchée(s)</label>
+        >Type de mission</label>
     <select
       id="missiontype"
       name="missiontype"
@@ -93,7 +93,7 @@ include("../partials/header") %>
         name="startdate"
         class="post-add-form-startdate"
         placeholder="jj/mm/aaaa"
-        value="<%= value?.stratDate || '' %>"
+        value="<%= value?.startDate || '' %>"
     />
 
         <!--salary €-->
