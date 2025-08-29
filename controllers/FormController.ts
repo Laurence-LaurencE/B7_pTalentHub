@@ -4,6 +4,8 @@ import { Controller } from "../libs/Controller";
 import { Ads } from "../datas";
 
 export class FormController extends Controller {
+
+
     public addform(){
 //à remettre lorsque j'aurais mes valeurs
         // this.response.render ("pages/formadd");
@@ -14,6 +16,8 @@ export class FormController extends Controller {
     public createform(){
         this.response.render("pages/formadd");
     }
+
+    
 
 };
 

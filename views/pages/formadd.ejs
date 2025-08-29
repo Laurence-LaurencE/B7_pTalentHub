@@ -4,8 +4,8 @@ include("../partials/header") %>
 <main>
   <h2>Création d'une annonce</h2>
   <form action="/formadd" method="post" class="post-add-form">
-    <div> 
-        <!--titre annonce -->
+    <fieldset>
+      <!--titre annonce -->
       <label for="title" class="post-add-label">Titre de l'annonce</label>
       <input
         id="title"
@@ -14,6 +14,7 @@ include("../partials/header") %>
         class="post-add-form-input"
         placeholder="Ex : Recherche talent junior"
         value="<%= value?.title || '' %>"
+        required
       />
       <% if (errors?.title?.errors?.[0]) { %>
       <small id="title-error" style="color: red">
@@ -30,16 +31,17 @@ include("../partials/header") %>
         name="description"
         class="post-add-form-textarea"
         placeholder="--"
+        required
       >
 <%= value?.description || '' %>
         </textarea
       >
 
-        <!--select Competences-->
+      <!--select Competences-->
       <label for="skills" class="post-add-label"
         >Compétence(s) recherchée(s)</label
       >
-      <select id="skills" name="skills" class="post-add-form-skills">
+      <select id="skills" name="skills" class="post-add-form-skills" required>
         <option value="html">HTML</option>
         <option value="html5">HTML5</option>
         <option value="css">CSS</option>
@@ -68,69 +70,82 @@ include("../partials/header") %>
         <option value="agility">Agilité</option>
         <option value="communication">Communication</option>
       </select>
-    </div>
+    </fieldset>
 
-    <div>
+    <fieldset>
+      <div>
         <!--select missionType-->
-        <label for="missiontype" class="post-add-label"
-        >Type de mission</label>
-    <select
-      id="missiontype"
-      name="missiontype"
-      class="post-add-form-missiontype"
-      placeholder="Frelance, CDI ..."
-    >
-      <option value="freelance">Freelance</option>
-      <option value="cdi">CDI</option>
-      <option value="cdd">CDD</option>
-    </select>
+        <label for="missiontype" class="post-add-label">Type de mission</label>
+        <select
+          id="missiontype"
+          name="missiontype"
+          class="post-add-form-missiontype"
+          placeholder="Frelance, CDI ..."
+          required
+        >
+          <option value="freelance">Freelance</option>
+          <option value="cdi">CDI</option>
+          <option value="cdd">CDD</option>
+        </select>
 
         <!--Select startDate-->
-    <label for="startdate" class="post-add-label">Date onboarding</label>
-    <input 
-        id="startdate" 
-        type="date"
-        name="startdate"
-        class="post-add-form-startdate"
-        placeholder="jj/mm/aaaa"
-        value="<%= value?.startDate || '' %>"
-    />
+        <label for="startdate" class="post-add-label">Date onboarding</label>
+        <input
+          id="startdate"
+          type="date"
+          name="startdate"
+          class="post-add-form-startdate"
+          placeholder="jj/mm/aaaa"
+          value="<%= value?.startDate || '' %>"
+          required
+        />
+      </div>
 
-        <!--salary €-->
-    <label for="salary" class="post-add-label">Salaire</label>
-    <div class="input-salary"> <!-- la div pour le css => integrer le € ds le champ automatiquemt-->
-        <input 
+      <!--salary €-->
+      <div>
+        <label for="salary" class="post-add-label">Salaire</label>
+        <div class="input-salary">
+          <!-- la div pour le css => integrer le € ds le champ automatiquemt-->
+          <input
             id="salary"
             type="number"
             name="salary"
             min="0"
             placeholder="--"
-        />
-    </div>
+            required
+          />
+        </div>
 
-    <!--Unité de salaire-->
-    <label for="salary_unit" class="post-add-label">Unité de salaire</label>
-    <select
-      id="salary_unit"
-      name="salary_unit"
-      class="post-add-form-salary_unit"
-      placeholder="Brut annuel"
-    >
-      <option value="jour">jour</option>
-      <option value="mensuel">Brut mensuel</option>
-      <option value="annuel">Brut annuel</option>
-    </select>
-    </div>
+        <!--Unité de salaire-->
+        <label for="salary_unit" class="post-add-label">Unité de salaire</label>
+        <select
+          id="salary_unit"
+          name="salary_unit"
+          class="post-add-form-salary_unit"
+          placeholder="Brut annuel"
+          required
+        >
+          <option value="jour">jour</option>
+          <option value="mensuel">Brut mensuel</option>
+          <option value="annuel">Brut annuel</option>
+        </select>
+      </div>
+    </fieldset>
 
-    <div>
-        <label for="password" class="post-add-label">Mot de passe</label>
-        <input 
+    <fieldset>
+      <label for="password" class="post-add-label">Mot de passe</label>
+      <input
         id="password"
         type="password"
         name="password"
-        placeholder="*************">
-        <p>Un mot de passe est nécessaire pour administrer l'annonce une fois publiée. Assurez-vous de le conserver précieusement.</p>
-    </div>
+        placeholder="*************"
+        required
+      />
+      <p>
+        Un mot de passe est nécessaire pour administrer l'annonce une fois
+        publiée. Assurez-vous de le conserver précieusement.
+      </p>
+    </fieldset>
 
     <button type="submit" class="post-add-form-button">Créer l'annonce</button>
   </form>

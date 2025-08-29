@@ -1,9 +1,159 @@
-<%- include("../partials/head", { title: "Accueil TalentHub" }) %>
-<%- include("../partials/header") %>
+<%- include("../partials/head", { title: "Accueil TalentHub" }) %> <%-
+include("../partials/header") %>
 
 <main>
+  <h2>
+    Edition de l'annonce
+    <!--id title annonce-->
+  </h2>
 
+  <form action="/formadd" method="post" class="post-edit-label">
+    <fieldset>
+      <label for="password" class="post-edit-label">Mot de passe</label>
+      <input
+        id="password"
+        type="password"
+        name="password"
+        placeholder="*************"
+        required
+      />
+      <p>
+        Le mot de passe défini lors de la création de l’annonce est nécessaire
+        pour enregistrer vos modifications. Sans ce mot de passe, celles-ci ne
+        seront pas appliquées.
+      </p>
+    </fieldset>
 
+    <fieldset>
+      <!--titre annonce -->
+      <label for="title" class="post-edit-label">Titre de l'annonce</label>
+      <input
+        id="title"
+        type="text"
+        name="title"
+        class="post-add-form-input"
+        placeholder="Ex : Recherche talent junior"
+        value="<%= value?.title || '' %>"
+        required
+      />
+      <% if (errors?.title?.errors?.[0]) { %>
+      <small id="title-error" style="color: red">
+        <%= errors.title.errors[0] %>
+      </small>
+      <% } %>
+
+      <!--Description-->
+      <label for="description" class="post-edit-label"
+        >Description de l'offre</label
+      >
+      <textarea
+        id="description"
+        name="description"
+        class="post-add-form-textarea"
+        placeholder="--"
+        required
+      >
+<%= value?.description || '' %>
+        </textarea
+      >
+
+      <!--select Competences-->
+      <label for="skills" class="post-edit-label"
+        >Compétence(s) recherchée(s)</label
+      >
+      <select id="skills" name="skills" class="post-add-form-skills" required>
+        <option value="html">HTML</option>
+        <option value="html5">HTML5</option>
+        <option value="css">CSS</option>
+        <option value="css3">CSS3</option>
+        <option value="javaScript">JavaScript</option>
+        <option value="nodejs">Node.js</option>
+        <option value="vuejs">Vue.js</option>
+        <option value="express">Express</option>
+        <option value="react">React</option>
+        <option value="python">Python</option>
+        <option value="figma">Figma</option>
+        <option value="mongoDB">MongoDB</option>
+        <option value="restapi">REST API</option>
+        <option value="postgresql">PostgreSQL</option>
+        <option value="docker">Docker</option>
+        <option value="git">Git</option>
+        <option value="responsivedesign">Responsive Design</option>
+        <option value="uiux">UI/UX</option>
+        <option value="wordpress">Wordpress</option>
+        <option value="flutter">Flutter</option>
+        <option value="dart">Dart</option>
+        <option value="firebase">Firebase</option>
+        <option value="django">Django</option>
+        <option value="djangoback25">DjangoBack25</option>
+        <option value="projectmanagement">Gestion de projet</option>
+        <option value="agility">Agilité</option>
+        <option value="communication">Communication</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <!--select missionType-->
+      <label for="missiontype" class="post-edit-label">Type de mission</label>
+      <select
+        id="missiontype"
+        name="missiontype"
+        class="post-add-form-missiontype"
+        placeholder="Frelance, CDI ..."
+        required
+      >
+        <option value="freelance">Freelance</option>
+        <option value="cdi">CDI</option>
+        <option value="cdd">CDD</option>
+      </select>
+
+      <!--Select startDate-->
+      <label for="startdate" class="post-edit-label">Date onboarding</label>
+      <input
+        id="startdate"
+        type="date"
+        name="startdate"
+        class="post-add-form-startdate"
+        placeholder="jj/mm/aaaa"
+        value="<%= value?.startDate || '' %>"
+        required
+      />
+
+      <!--salary €-->
+      <label for="salary" class="post-edit-label">Salaire</label>
+      <div class="input-salary">
+        <!-- la div pour le css => integrer le € ds le champ automatiquemt-->
+        <input
+          id="salary"
+          type="number"
+          name="salary"
+          min="0"
+          placeholder="--"
+          required
+        />
+      </div>
+
+      <!--Unité de salaire-->
+      <label for="salary_unit" class="post-edit-label">Unité de salaire</label>
+      <select
+        id="salary_unit"
+        name="salary_unit"
+        class="post-add-form-salary_unit"
+        placeholder="Brut annuel"
+        required
+      >
+        <option value="jour">jour</option>
+        <option value="mensuel">Brut mensuel</option>
+        <option value="annuel">Brut annuel</option>
+      </select>
+    </fieldset>
+
+    <button type="submit" class="post-edit-form-button">
+      Sauvegarder les modifs
+    </button>
+    <!-- <input type="submit" value="Sauvegarder les modifs" /> 
+     solution moins adpatée pour css-->
+  </form>
 </main>
 
 <%- include("../partials/footer") %>
